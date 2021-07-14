@@ -76,6 +76,7 @@ public class MaxHeap {
     heap[index2] = temp;
   }
 
+  /** Time Complexity: O(nlogn); */
   public static MaxHeap heapifyUp(int[] nums) {
     MaxHeap heap = new MaxHeap(nums.length);
     heap.heap = Arrays.copyOf(nums, nums.length);
@@ -93,6 +94,7 @@ public class MaxHeap {
     }
   }
 
+  /** Time Complexity: O(n); */
   public static MaxHeap heapifyDown(int[] nums) {
     MaxHeap heap = new MaxHeap(nums.length);
     heap.heap = Arrays.copyOf(nums, nums.length);
