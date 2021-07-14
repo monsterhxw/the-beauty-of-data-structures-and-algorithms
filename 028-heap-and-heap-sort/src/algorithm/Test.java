@@ -8,31 +8,51 @@ import java.util.Arrays;
  */
 public class Test {
   public static void main(String[] args) {
-    int[] nums = new int[] {33, 17, 21, 16, 13, 15, 9, 5, 6, 7, 8, 1, 2};
+    int[] nums = new int[] {1, 2, 3, 4, 5, 6};
     System.out.println("nums is: " + Arrays.toString(nums));
 
-    testMaxHeap(nums);
+    testMaxHeapByHeapifyUp(nums);
+
+    testMaxHeapByHeapifyDown(nums);
   }
 
-  private static void testMaxHeap(int[] nums) {
-    System.out.println("----------testMaxHeap----------");
-    MaxHeap maxHeap = new MaxHeap();
+  private static void testMaxHeapByHeapifyUp(int[] nums) {
+    System.out.println("----------testMaxHeapByHeapifyUp----------");
+    System.out.println("call heapifyUp(): ");
+    MaxHeap maxHeap = MaxHeap.heapifyUp(nums);
     maxHeap.print();
+    System.out.println("call peek(): " + maxHeap.peek());
+    System.out.println("call poll(): return is : " + maxHeap.poll());
+    System.out.println("call poll(): return is : " + maxHeap.poll());
+    System.out.println("call poll(): return is : " + maxHeap.poll());
+    maxHeap.print();
+    System.out.println("call offer(7)");
+    maxHeap.offer(7);
+    System.out.println("call offer(8)");
+    maxHeap.offer(8);
+    System.out.println("call offer(9)");
+    maxHeap.offer(9);
+    maxHeap.print();
+    System.out.println("----------testMaxHeapByHeapifyUp----------");
+  }
 
-    System.out.println("call heapifyUp");
-    maxHeap.heapifyUp(nums);
+  private static void testMaxHeapByHeapifyDown(int[] nums) {
+    System.out.println("----------testMaxHeapByHeapifyDown----------");
+    System.out.println("call heapifyUp(): ");
+    MaxHeap maxHeap = MaxHeap.heapifyDown(nums);
     maxHeap.print();
-
-    System.out.println("call offer(22)");
-    maxHeap.offer(22);
+    System.out.println("call peek(): " + maxHeap.peek());
+    System.out.println("call poll(): return is : " + maxHeap.poll());
+    System.out.println("call poll(): return is : " + maxHeap.poll());
+    System.out.println("call poll(): return is : " + maxHeap.poll());
     maxHeap.print();
-
-    System.out.println("call offer(23)");
-    maxHeap.offer(23);
+    System.out.println("call offer(7)");
+    maxHeap.offer(7);
+    System.out.println("call offer(8)");
+    maxHeap.offer(8);
+    System.out.println("call offer(9)");
+    maxHeap.offer(9);
     maxHeap.print();
-
-    System.out.println("call offer(24)");
-    maxHeap.offer(24);
-    maxHeap.print();
+    System.out.println("----------testMaxHeapByHeapifyDown----------");
   }
 }
