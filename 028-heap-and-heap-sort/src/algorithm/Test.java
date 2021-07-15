@@ -8,12 +8,14 @@ import java.util.Arrays;
  */
 public class Test {
   public static void main(String[] args) {
-    int[] nums = new int[] {1, 2, 3, 4, 5, 6};
+    int[] nums = new int[] {6, 5, 4, 8, 9, 7, 3, 2, 1};
     System.out.println("nums is: " + Arrays.toString(nums));
 
     testMaxHeapByHeapifyUp(nums);
 
     testMaxHeapByHeapifyDown(nums);
+
+    testHeapSort(nums);
   }
 
   private static void testMaxHeapByHeapifyUp(int[] nums) {
@@ -54,5 +56,14 @@ public class Test {
     maxHeap.offer(9);
     maxHeap.print();
     System.out.println("----------testMaxHeapByHeapifyDown----------");
+  }
+
+  private static void testHeapSort(int[] nums) {
+    System.out.println("----------testHeapSort----------");
+    HeapSort solution = new HeapSort();
+    System.out.println("original nums is: " + Arrays.toString(nums));
+    solution.heapSort(nums);
+    System.out.println("call heapSort(); nums is: " + Arrays.toString(nums));
+    System.out.println("----------testHeapSort----------");
   }
 }

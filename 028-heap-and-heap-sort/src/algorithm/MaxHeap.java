@@ -21,6 +21,7 @@ public class MaxHeap {
     this.size = 0;
   }
 
+  /** Time Complexity: O(logn); */
   public void offer(int element) {
     if (size >= capacity) {
       throw new ArrayIndexOutOfBoundsException();
@@ -33,6 +34,7 @@ public class MaxHeap {
     }
   }
 
+  /** Time Complexity: O(logn); */
   public int poll() {
     int rootVal = peek();
     heap[0] = heap[size - 1];
@@ -42,6 +44,7 @@ public class MaxHeap {
     return rootVal;
   }
 
+  /** Time Complexity: O(1); */
   public int peek() {
     return heap[0];
   }
@@ -81,7 +84,9 @@ public class MaxHeap {
     MaxHeap heap = new MaxHeap(nums.length);
     heap.heap = Arrays.copyOf(nums, nums.length);
     heap.size = nums.length;
-    for (int i = 0; i < nums.length; i++) {
+    // parent of last node index is: (lastIndex - 1) / 2; lastIndex = size - 1;
+    int lastIndex = nums.length - 1;
+    for (int i = (lastIndex - 1) / 2; i < nums.length; i++) {
       siftUp(heap.heap, i);
     }
     return heap;
