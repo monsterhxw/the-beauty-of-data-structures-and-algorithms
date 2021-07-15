@@ -12,9 +12,9 @@ public class HeapSort {
     buildMaxHeap(nums);
 
     // sort :Time Complexity: O(nlogn);
-    for (int i = nums.length; i >= 1; i--) {
-      swap(nums, 0, i - 1);
-      siftDown(nums, i - 1, 0);
+    for (int i = nums.length - 1; i >= 0; i--) {
+      swap(nums, 0, i);
+      siftDown(nums, i, 0);
     }
   }
 
